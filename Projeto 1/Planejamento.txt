@@ -1,0 +1,20 @@
+Indivíduos:
+	Os indivíduos da população possuem código genético e uma nota de linguagem. O código genético definirá seu
+	fenótipo e a forma como eles interagem com o ambiente. A nota de linguagem definirá o quão bem ele pode se
+	comunicar com outros indivíduos. Quanto melhor a comunicação de um pai, mais suas experiências serão passadas
+	para os filhos, e eles terão maior chance de terem um fenótipo melhorado. 
+
+Código genético:
+	Características presentes no código genético são:
+		_Força
+		_Velocidade
+		_Resistência a calor
+		_Resistência a frio
+		
+	
+Ambiente:
+	Haverá diferentes tipos de ambiente com diferentes tipos de pressão:
+		_Frio
+		_Quente
+		_Muitos Predadores
+		
