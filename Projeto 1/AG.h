@@ -5,7 +5,6 @@
 
 #define POP_INICIAL 50
 #define POP_MAX 100
-#define N_GENES 4
 #define VALOR_MAX 100
 #define GERACAO_SECCAO 25
 #define MIN_RESISTENCIA_FRIO 60
@@ -27,7 +26,9 @@ enum codigo_genetico {
 	SONO,
 	RESISTENCIA_FRIO,
 	RESISTENCIA_CALOR,
-	VIOLENCIA
+	VIOLENCIA,
+	
+	N_GENES
 };
 
 /*Cada indivíduo possui um código genético que definirá sua forma para
@@ -41,13 +42,28 @@ struct individuo {
 
 typedef struct individuo Individuo;
 
+/*Struct feita para gerenciar a população e suas propriedades*/
+
+struct gerenciador_populacao {
+	Individuo * individuos;
+	int tamanho_populacao;
+	int capacidade_populacao;
+	int n_geracao;
+}
+
+typedef struct gerenciador_populacao g_populacao;
+
 
 /*Cria um vetor de indivíduos com códigos genéticos e notas de linguagem
  * aleatórios*/
-Individuo * inicia_populacao ();
+void inicia_populacao ();
 
-void exporta_geracao(Individuo * populacao, int n_individuos, FILE * pa, int n_geracao);
+void exporta_geracao (FILE * pa);
 
-void libera_individuos(Individuo * populacao);
+void libera_individuos ();
+
+void mata_individuos (int ambiente);
+
+void reproduz_individuos (int ambiente);
 
 #endif
