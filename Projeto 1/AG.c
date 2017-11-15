@@ -6,7 +6,7 @@ void inicia_populacao () {
 	int j;
 	srand(time(NULL));
 	populacao.individuos = malloc(sizeof(individuo) * POP_INICIAL);
-	
+
 	/*Inicializa o código genético dos indivíduos de forma aleatória, assim
 	 * como sua nota de linguagem*/
 	for (int i = 0; i < POP_INICIAL; i++) {
@@ -47,10 +47,10 @@ void mata_individuos (int ambiente) {
 			//percorre a população e verifica se cada indivíduo possui
 			//resistência ao frio maior que a mínima necessária
 			for (i = 0; i < populacao.tamanho_populacao; i++) {
-				if ((populacao.*(individuos + i)) -> 
+				if ((populacao.*(individuos + i)) ->
 						*(codigo_genetico + RESISTENCIA_FRIO) < MIN_RESISTENCIA_FRIO) {
 					//se a resistência for menor que a necessária, diminui
-					//o tamanho da populacao e sobrescreve o morto com os 
+					//o tamanho da populacao e sobrescreve o morto com os
 					//seguintes
 					for (j = i; j < populacao.tamanho_populacao; j++) {
 						populacao.*(individuos + j) = populacao.*(individuos + j + 1);
@@ -76,7 +76,7 @@ void reproducao (int ambiente) {
 	srand(time(NULL));
 	int pai, mae, i;
 	float inteligencia;
-	
+
 	//Escolhe aleatoriamente pai e mãe sem verificar se são o mesmo indivíduo
 	pai = rand() % (tam_populacao + 1);
 	mae = rand() % (tam_populacao + 1);
@@ -84,24 +84,24 @@ void reproducao (int ambiente) {
 	populacao.*(individuos + (populacao.tamanho_populacao)) = rand() % VALOR_MAX;
 	//Define a porcentagem máxima que ele poderá aproveitar do que for
 	//passado oralmente pelos pais
-	inteligencia = ((((populacao.*(individuos + pai)) -> linguagem) /100.0) + 
+	inteligencia = ((((populacao.*(individuos + pai)) -> linguagem) /100.0) +
 			(((populacao.*(individuos + pai)) -> linguagem) / 100.0) / 2.0)
 			* populacao.(individuos + (populacao.tamanho_populacao)) -> linguagem;
-	
+
 	//faz a reprodução entre os pais
 	for (i = 0; i < N_GENES; i++) {
 		populacao.(individuos + (populacao.tamanho_populacao))->*(codigo_genetico + i) =
 				((populacao.(individuos + pai))->*(codigo_genetico + i) +
 				(populacao.(individuos + mae))-> *(codigo_genetico + i)) / 2;
-		//se o código genético não for aquele importante para o ambiente 
+		//se o código genético não for aquele importante para o ambiente
 		//em que ele está, ele pode aprender oralmente
 		if (i != ambiente) {
 			populacao.*(individuos + (populacao.tamanho_populacao)).*(codigo_genetico + i) =
-					populacao.*(individuos + (populacao.tamanho_populacao)).*(codigo_genetico + i) + 
-					(populacao.*(individuos + (populacao.tamanho_populacao)).*(codigo_genetico + i)) * inteligencia); 
+					populacao.*(individuos + (populacao.tamanho_populacao)).*(codigo_genetico + i) +
+					(populacao.*(individuos + (populacao.tamanho_populacao)).*(codigo_genetico + i)) * inteligencia);
 		}
 	}
-	
+
 	return;
 }
 
@@ -114,7 +114,7 @@ void reproduz_individuos (int ambiente) {
 	/*Verifica se o vetor possui tamanho suficiente para receber as crias.
 	 * Se não possuir, realoca o vetor e atualiza a capacidade dele*/
 	if(populacao.tamanho_populacao + n_cruzamentos > populacao.capacidade_populacao) {
-		populacao.individuos = realloc(populacao.individuos, 
+		populacao.individuos = realloc(populacao.individuos,
 				(populacao.tamanho_populacao + n_cruzamentos));
 		populacao.capacidade_populacao = populacao.tamanho_populacao + n_cruzamentos;
 	}

@@ -27,7 +27,7 @@ enum codigo_genetico {
 	RESISTENCIA_FRIO,
 	RESISTENCIA_CALOR,
 	VIOLENCIA,
-	
+
 	N_GENES
 };
 
@@ -38,7 +38,7 @@ enum codigo_genetico {
 struct individuo {
 	int * codigo_genetico;
 	int linguagem;
-}
+};
 
 typedef struct individuo Individuo;
 
@@ -49,7 +49,7 @@ struct gerenciador_populacao {
 	int tamanho_populacao;
 	int capacidade_populacao;
 	int n_geracao;
-}
+};
 
 typedef struct gerenciador_populacao g_populacao;
 
