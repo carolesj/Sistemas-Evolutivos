@@ -1,6 +1,5 @@
-#include "AG.h"
-
-int main (int argc, char ** argv) {
+int main (/*int argc, char ** argv*/) {
+	/*
 	FILE * pa;
 	pa = fopen("geracoes.txt", a+);
 	Individuo * populacao, melhor;
@@ -17,5 +16,6 @@ int main (int argc, char ** argv) {
 
 	libera_individuos(populacao);
 	fclose(pa);
+	*/
 	return 0;
 }
