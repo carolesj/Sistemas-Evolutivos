@@ -1,6 +1,8 @@
 #ifndef CHROMOSSOME_H
 #define CHROMOSSOME_H
 
+#include "util.h"
+
 struct chromossome;
 
 typedef struct chromossome CHROMOSSOME;
@@ -18,17 +20,17 @@ CHROMOSSOME* new_chromossome(
 		float thirst
 		);
 
-float get_speed(CHROMOSSOME* chromossome);
+float chromo_get_speed(CHROMOSSOME* chromossome);
 
-float get_metabolism(CHROMOSSOME* chromossome);
+float chromo_get_metabolism(CHROMOSSOME* chromossome);
 
-float get_cold_resistance(CHROMOSSOME* chromossome);
+float chromo_get_cold_resistance(CHROMOSSOME* chromossome);
 
-float get_power(CHROMOSSOME* chromossome);
+float chromo_get_power(CHROMOSSOME* chromossome);
 
-float get_rest_time(CHROMOSSOME* chromossome);
+float chromo_get_rest_time(CHROMOSSOME* chromossome);
 
-float get_thirst(CHROMOSSOME* chromossome);
+float chromo_get_thirst(CHROMOSSOME* chromossome);
 
 void free_chromossome(CHROMOSSOME ** chromossome);
 

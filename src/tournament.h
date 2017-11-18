@@ -3,6 +3,8 @@
 
 #include "animal.h"
 
-ANIMAL** tounament(ANIMAL** contestants, int population_size);
+typedef ANIMAL* POPULATION;
+
+POPULATION* tournament(POPULATION* population, int population_size, ENVIRONMENT* env);
 
 #endif /* TOURNAMENT_H */

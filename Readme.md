@@ -52,7 +52,7 @@ Para o segundo filho soma uma porcentagem de 15%
 
 Mutação
 -------
-em cada alelo soma ou subtrai (50% de chance cada) uma porcentagem variável do valor do alelo. entre [5,20]%
+Em cada alelo soma ou subtrai (50% de chance cada) uma porcentagem variável do valor do alelo. Entre [5,20]%
 
 Fitness
 -------

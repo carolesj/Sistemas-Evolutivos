@@ -4,14 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-float random_f() {
-	srand(time(NULL));
-	return (float)rand()/(float)(RAND_MAX);
-}
+float random_f();
 
-int random_between(int min, int max) {
-	srand(time(NULL));
-	return (rand() % (max + 1)) + min;
-}
+int random_between(int min, int max);
 
 #endif /* UTIL_H */

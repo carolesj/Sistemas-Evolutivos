@@ -1,5 +1,4 @@
 #include "chromossome.h"
-#include "util.h"
 #include <time.h>
 #include <stdlib.h>
 
@@ -55,32 +54,32 @@ CHROMOSSOME* copy_chromossome(CHROMOSSOME* base) {
 			);
 }
 
-float get_speed(CHROMOSSOME* chromossome) {
+float chromo_get_speed(CHROMOSSOME* chromossome) {
 	if (!chromossome) return 0;
 	return chromossome->speed;
 }
 
-float get_metabolism(CHROMOSSOME* chromossome) {
+float chromo_get_metabolism(CHROMOSSOME* chromossome) {
 	if (!chromossome) return 0;
 	return chromossome->metabolism;
 }
 
-float get_cold_resistance(CHROMOSSOME* chromossome) {
+float chromo_get_cold_resistance(CHROMOSSOME* chromossome) {
 	if (!chromossome) return 0;
 	return chromossome->cold_resistance;
 }
 
-float get_power(CHROMOSSOME* chromossome) {
+float chromo_get_power(CHROMOSSOME* chromossome) {
 	if (!chromossome) return 0;
 	return chromossome->power;
 }
 
-float get_rest_time(CHROMOSSOME* chromossome) {
+float chromo_get_rest_time(CHROMOSSOME* chromossome) {
 	if (!chromossome) return 0;
 	return chromossome->rest_time;
 }
 
-float get_thirst(CHROMOSSOME* chromossome) {
+float chromo_get_thirst(CHROMOSSOME* chromossome) {
 	if (!chromossome) return 0;
 	return chromossome->thirst;
 }
