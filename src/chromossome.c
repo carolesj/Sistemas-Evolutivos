@@ -54,6 +54,49 @@ CHROMOSSOME* copy_chromossome(CHROMOSSOME* base) {
 			);
 }
 
+inline float _gametosex_part(
+		float a, float b,
+		float mutation_factor,
+		float mutation_probability
+		) {
+	float value = (a + b)/2;
+	if (random_f() < mutation_probability) {
+		int sign = random_between(0, 1) ? 1 : -1;
+		value += mutation_factor * sign;
+	}
+	return value;
+}
+
+CHROMOSSOME* gametosex(
+		CHROMOSSOME* one,
+		CHROMOSSOME* two,
+		float mutation_factor,
+		float mutation_probability
+		) {
+
+	#define __mix_chromo(X) X = _gametosex_part(\
+			one->X,\
+			two->X,\
+			mutation_factor,\
+			mutation_probability\
+			)
+	float __mix_chromo(speed);
+	float __mix_chromo(metabolism);
+	float __mix_chromo(cold_resistance);
+	float __mix_chromo(power);
+	float __mix_chromo(rest_time);
+	float __mix_chromo(thirst);
+
+	return new_chromossome(
+			speed,
+			metabolism,
+			cold_resistance,
+			power,
+			rest_time,
+			thirst
+			);
+}
+
 float chromo_get_speed(CHROMOSSOME* chromossome) {
 	if (!chromossome) return 0;
 	return chromossome->speed;

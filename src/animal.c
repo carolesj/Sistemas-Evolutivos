@@ -11,6 +11,21 @@ ANIMAL* new_empty_animal() {
 	return animal;
 }
 
+/*
+ * sexual_intercourse_between_two_loving_and_consenting_adult_animals
+ * SIBTLCAA
+ */
+ANIMAL* intercourse(ANIMAL* one, ANIMAL* two, float mutation_factor, float mutation_probability) {
+	ANIMAL* baby = new_empty_animal();
+	baby->chromossome = gametosex(
+			one->chromossome,
+			two->chromossome,
+			mutation_factor,
+			mutation_probability
+			);
+	return baby;
+}
+
 ANIMAL* new_animal() {
 	ANIMAL* animal = new_empty_animal();
 	animal->chromossome = new_random_chromossome();
@@ -96,7 +111,7 @@ float get_fitness(ANIMAL* animal, ENVIRONMENT* env) {
 	float food_stuff = get_food(env) *
 		((config.rest_food * rest) - (config.cold_resistance_food * cr));
 
-	float predation_stuff = get_predation(env) * 
+	float predation_stuff = get_predation(env) *
 		((config.speed_predation * spd) - (config.rest_predation * rest));
 
 	float speed_stuff = config.speed_speed * get_speed(animal) *

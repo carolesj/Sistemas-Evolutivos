@@ -1,9 +1,7 @@
 #ifndef TOURNAMENT_H
 #define TOURNAMENT_H
 
-#include "animal.h"
-
-typedef ANIMAL* POPULATION;
+#include "population.h"
 
 POPULATION* tournament(POPULATION* population, int population_size, ENVIRONMENT* env);
 

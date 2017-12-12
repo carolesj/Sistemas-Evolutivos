@@ -20,6 +20,13 @@ CHROMOSSOME* new_chromossome(
 		float thirst
 		);
 
+CHROMOSSOME* gametosex(
+		CHROMOSSOME* one,
+		CHROMOSSOME* two,
+		float mutation_factor,
+		float mutation_probability
+		);
+
 float chromo_get_speed(CHROMOSSOME* chromossome);
 
 float chromo_get_metabolism(CHROMOSSOME* chromossome);

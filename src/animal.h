@@ -12,6 +12,9 @@ ANIMAL* new_animal();
 
 ANIMAL* copy_animal(ANIMAL* base);
 
+// sexual_intercourse_between_two_loving_and_consenting_adult_animals
+ANIMAL* intercourse(ANIMAL* one, ANIMAL* two, float mutation_factor, float mutation_probability);
+
 CHROMOSSOME* get_chromossome(ANIMAL* animal);
 
 float get_speed(ANIMAL* animal);
