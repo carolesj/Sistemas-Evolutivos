@@ -12,6 +12,10 @@ ANIMAL* new_animal();
 
 ANIMAL* copy_animal(ANIMAL* base);
 
+void set_evolutionary_pressure(ANIMAL* animal, int pressure);
+
+int get_evolutionary_pressure(ANIMAL* animal);
+
 // sexual_intercourse_between_two_loving_and_consenting_adult_animals
 ANIMAL* intercourse(ANIMAL* one, ANIMAL* two, float mutation_factor, float mutation_probability);
 

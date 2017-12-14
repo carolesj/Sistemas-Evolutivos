@@ -1,14 +1,28 @@
 #include "animal.h"
 #include "config.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 struct animal {
 	CHROMOSSOME *chromossome;
+	int evolutionary_pressure;
 };
 
 ANIMAL* new_empty_animal() {
 	ANIMAL* animal = malloc(sizeof(ANIMAL));
+	animal->evolutionary_pressure = 0;
+	if (animal < 0x10000) {
+		printf("NEW_EMPTY_ANIMAL FAILED!!");
+	}
 	return animal;
+}
+
+void set_evolutionary_pressure(ANIMAL* animal, int pressure) {
+	animal->evolutionary_pressure = pressure;
+}
+
+int get_evolutionary_pressure(ANIMAL* animal) {
+	return animal->evolutionary_pressure;
 }
 
 /*
@@ -17,12 +31,14 @@ ANIMAL* new_empty_animal() {
  */
 ANIMAL* intercourse(ANIMAL* one, ANIMAL* two, float mutation_factor, float mutation_probability) {
 	ANIMAL* baby = new_empty_animal();
+	printf("novo bebezinho\n");
 	baby->chromossome = gametosex(
 			one->chromossome,
 			two->chromossome,
 			mutation_factor,
 			mutation_probability
 			);
+	printf("pariu\n");
 	return baby;
 }
 
@@ -100,6 +116,9 @@ void free_animal(ANIMAL** animal){
  *     thr = thirst
  */
 float get_fitness(ANIMAL* animal, ENVIRONMENT* env) {
+	if (animal < 0x10000) {
+		printf("Deu ruim: animal %p\n", animal);
+	}
 	struct coeficients config = get_coeficients();
 
 	float rest = get_rest_time(animal);

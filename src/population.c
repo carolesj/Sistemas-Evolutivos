@@ -13,6 +13,17 @@ int select_random_animal(POPULATION* population, int population_size) {
 	return (count < population_size) ? animal1 : -1;
 }
 
+ANIMAL* extract_contestant(POPULATION* population, int population_size) {
+	int animal = select_random_animal(population, population_size);
+	if (animal < 0) {
+		return NULL;
+	} else {
+		ANIMAL* ret = population[animal];
+		population[animal] = NULL;
+		return ret;
+	}
+}
+
 /**
  * select 2 contestants
  * @return array of 2 contestants
@@ -20,13 +31,11 @@ int select_random_animal(POPULATION* population, int population_size) {
 POPULATION* choose_contestants(POPULATION* population, int population_size) {
 	POPULATION* ret = malloc(sizeof(POPULATION) * 2);
 
-	int animal1 = select_random_animal(population, population_size);
-	ret[0] = population[animal1];
-	population[animal1] = NULL;
+	ret[0] = extract_contestant(population, population_size);
 
-	int animal2 = select_random_animal(population, population_size);
-	ret[1] = population[animal2];
-	population[animal2] = NULL;
+	ret[1] = extract_contestant(population, population_size);
+
+	if (!ret[1]) ret[1] = ret[0];
 
 	return ret;
 }
@@ -34,6 +43,9 @@ POPULATION* choose_contestants(POPULATION* population, int population_size) {
 POPULATION* copy_population(POPULATION* population, int population_size) {
 	POPULATION* copy = malloc(sizeof(POPULATION) * population_size);
 	for (int i = 0; i < population_size; i++){
+		if (get_chromossome(population[i]) > 0xffffffffffff) {
+			printf("retardou\n");
+		}
 		copy[i] = copy_animal(population[i]);
 	}
 	return copy;
@@ -46,13 +58,14 @@ void export_population(POPULATION* population, int population_size, int index, F
 	fprintf(file, "%d", index);
 	for (int i = 0; i < population_size; i++){
 		CHROMOSSOME* i_chromo = get_chromossome(population[i]);
-		fprintf(file, ",%f,%f,%f,%f,%f,%f",
-				chromo_get_speed(i_chromo), 
+		fprintf(file, ",%f,%f,%f,%f,%f,%f,%d",
+				chromo_get_speed(i_chromo),
 				chromo_get_metabolism(i_chromo),
 				chromo_get_cold_resistance(i_chromo),
 				chromo_get_power(i_chromo),
 				chromo_get_rest_time(i_chromo),
-				chromo_get_thirst(i_chromo)
+				chromo_get_thirst(i_chromo),
+				get_evolutionary_pressure(population[i])
 			   );
 	}
 	fprintf(file, "\n");

@@ -8,4 +8,6 @@ float random_f();
 
 int random_between(int min, int max);
 
+void shuffle(void *obj, size_t nmemb, size_t size);
+
 #endif /* UTIL_H */

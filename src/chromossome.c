@@ -1,6 +1,7 @@
 #include "chromossome.h"
 #include <time.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 struct chromossome {
 	float speed;
@@ -32,6 +33,10 @@ CHROMOSSOME* new_chromossome(
 		) {
 	CHROMOSSOME* ret = malloc(sizeof(CHROMOSSOME));
 
+	if (ret < 0x10000) {
+		printf("NEW_CHROMOSSOME_FAILED!\n");
+	}
+
 	ret->speed = speed;
 	ret->metabolism = metabolism;
 	ret->cold_resistance = cold_resistance;
@@ -39,12 +44,16 @@ CHROMOSSOME* new_chromossome(
 	ret->rest_time = rest_time;
 	ret->thirst = thirst;
 
+	printf("new_chromossome completed\n");
+
 	return ret;
 }
 
 CHROMOSSOME* copy_chromossome(CHROMOSSOME* base) {
 	if (!base) return NULL;
-	return new_chromossome(
+	printf("copy_chromossome started\n");
+	printf("based of: %p\n", base);
+	CHROMOSSOME* c = new_chromossome(
 			base->speed,
 			base->metabolism,
 			base->cold_resistance,
@@ -52,18 +61,22 @@ CHROMOSSOME* copy_chromossome(CHROMOSSOME* base) {
 			base->rest_time,
 			base->thirst
 			);
+	printf("new_chromossome returned\n");
+	return c;
 }
 
-inline float _gametosex_part(
+float _gametosex_part(
 		float a, float b,
 		float mutation_factor,
 		float mutation_probability
 		) {
+	// printf("parte do secho de gametas\n");
 	float value = (a + b)/2;
 	if (random_f() < mutation_probability) {
 		int sign = random_between(0, 1) ? 1 : -1;
 		value += mutation_factor * sign;
 	}
+	// printf("deu bom gametosex_patzn\n");
 	return value;
 }
 
@@ -80,6 +93,7 @@ CHROMOSSOME* gametosex(
 			mutation_factor,\
 			mutation_probability\
 			)
+
 	float __mix_chromo(speed);
 	float __mix_chromo(metabolism);
 	float __mix_chromo(cold_resistance);
@@ -87,7 +101,7 @@ CHROMOSSOME* gametosex(
 	float __mix_chromo(rest_time);
 	float __mix_chromo(thirst);
 
-	return new_chromossome(
+	CHROMOSSOME* c = new_chromossome(
 			speed,
 			metabolism,
 			cold_resistance,
@@ -95,6 +109,8 @@ CHROMOSSOME* gametosex(
 			rest_time,
 			thirst
 			);
+	printf("gametou\n");
+	return c;
 }
 
 float chromo_get_speed(CHROMOSSOME* chromossome) {

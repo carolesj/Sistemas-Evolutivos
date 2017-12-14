@@ -11,6 +11,10 @@ ANIMAL* battle (POPULATION* population, int population_size, ENVIRONMENT* env) {
 
 	struct coeficients config = get_coeficients();
 
+	if (contestants[0] < 0x10000 || contestants[1] < 0x10000){
+		printf("ChooseContestants deu ruim:\n0: %p\n1: %p\n", contestants[0], contestants[1]);
+	}
+
 	float score0 =
 		config.fitness * get_fitness(contestants[0], env) +
 		config.power * get_power(contestants[0]);
@@ -41,13 +45,17 @@ ANIMAL* battle (POPULATION* population, int population_size, ENVIRONMENT* env) {
 
 POPULATION* tournament(POPULATION* population, int population_size, ENVIRONMENT* env) {
 
+	printf("starting tournament\n");
+
 	POPULATION* contestants = copy_population(population, population_size);
 
 	POPULATION* winners = malloc(sizeof(POPULATION) * population_size/2);
 
+	printf("battles");
 	for (int i = 0; i < population_size/2; i++) {
-		winners[i] = battle(population, population_size, env);
+		winners[i] = battle(contestants, population_size, env);
 	}
+	printf("finished tournament");
 
 	free_population(contestants, population_size);
 	return winners;
