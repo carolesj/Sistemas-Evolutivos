@@ -3,7 +3,7 @@
 #include "tournament.h"
 
 #define POPULATION_SIZE 512
-#define MAX_GENERATION 1000
+#define MAX_GENERATION 10000
 #define SECTION_GENERATION 1000
 #define MERGE_GENERATION 2000
 #define MUTATION_PROBABILITY 0.2
@@ -59,7 +59,7 @@ int main (int argc, char ** argv) {
 	ENVIRONMENT* env[] = {
         // food, temperature, waterness, predation
 		// EPOCH_1
-		new_environment(0.9, 0.5, 0.9, 0.1),
+		new_environment(0.1, 0.5, 0.9, 0.1),
 		// EPOCH_2a
 		new_environment(0.2, 0.5, 0.5, 0.7),
 		// EPOCH_2b

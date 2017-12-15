@@ -28,7 +28,7 @@ int get_evolutionary_pressure(ANIMAL* animal) {
  */
 ANIMAL* intercourse(ANIMAL* one, ANIMAL* two, float mutation_factor, float mutation_probability) {
 	ANIMAL* baby = new_empty_animal();
-    baby->evolutionary_pressure = one->evolutionary_pressure;
+	baby->evolutionary_pressure = one->evolutionary_pressure;
 	baby->chromossome = gametosex(
 			one->chromossome,
 			two->chromossome,
@@ -132,9 +132,9 @@ float get_fitness(ANIMAL* animal, ENVIRONMENT* env) {
 
 	float temperature_stuff = get_temperature(env) *
 		((config.thirst_temp * thr) - (
-		(config.metabolism_temp * met) +
-		(config.rest_temp * rest) +
-		(config.cold_resistance_temp * cr)));
+			(config.metabolism_temp * met) +
+			(config.rest_temp * rest) +
+			(config.cold_resistance_temp * cr)));
 
 	float waterness_stuff = get_waterness(env) *
 		(-(config.thirst_waterness * thr) - (config.cold_resistance_waterness * cr));

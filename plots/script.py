@@ -1,5 +1,6 @@
 import pandas as pd
 from matplotlib import pyplot as plt
+import sys
 
 def plot(data):
 
@@ -20,13 +21,18 @@ def plot(data):
     plt.yscale('linear')
     plt.title('Genes')
     plt.legend(('Speed', 'Metabolism', 'Cold Resistance', 'Power', 'Rest Time', 'Thirst'), loc='lower left')
-    
+
     plt.show()
 
 
 def main():
-    
-    df = pd.read_csv(filepath_or_buffer='result2.csv', header=None, sep=',')
+
+    if len(sys.argv) < 1:
+        print("Usage: " + sys.argv[0] + " <FILENAME>")
+        exit(0)
+    filename = sys.argv[1]
+
+    df = pd.read_csv(filepath_or_buffer=filename, header=None, sep=',')
 
     df.columns=['epoch', 'generation', 'speed', 'metabolism', 'coldResistance', 'power', 'restTime', 'thirst', 'fitness']
     df.dropna(how="all", inplace=True)
