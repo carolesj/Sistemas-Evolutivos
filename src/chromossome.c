@@ -53,6 +53,13 @@ CHROMOSSOME* copy_chromossome(CHROMOSSOME* base) {
 	if (!base) return NULL;
 	printf("copy_chromossome started\n");
 	printf("based of: %p\n", base);
+	printf("%f, %f, %f, %f, %f, %f\n", 
+			base->speed,
+			base->metabolism,
+			base->cold_resistance,
+			base->power,
+			base->rest_time,
+			base->thirst);
 	CHROMOSSOME* c = new_chromossome(
 			base->speed,
 			base->metabolism,

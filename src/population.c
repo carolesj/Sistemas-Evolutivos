@@ -34,8 +34,16 @@ POPULATION* choose_contestants(POPULATION* population, int population_size) {
 	ret[0] = extract_contestant(population, population_size);
 
 	ret[1] = extract_contestant(population, population_size);
+	
+	if (ret[0] < 0x10000 || ret[0] > 0xffffffffffff) {
+		ret[0] = ret[1];
+	}
+	
+	if (ret[1] < 0x10000 || ret[1] > 0xffffffffffff) {
+		ret[1] = ret[0];
+	}
 
-	if (!ret[1]) ret[1] = ret[0];
+	//if (!ret[1]) ret[1] = ret[0];
 
 	return ret;
 }

@@ -1,0 +1,185 @@
+./NATUREISBEAUTIFUL
+Envs Declared!
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+new_chromossome completed
+Population Created
+Generation 0
+starting tournament
+copy_chromossome started
+based of: 0x1864150
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864190
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18641d0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864210
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864250
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864290
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18642d0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864310
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864350
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864390
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18643d0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864410
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864450
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864490
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18644d0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864510
+new_chromossome completed
+new_chromossome returned
+battlesfinished tournamentGeneration 0 - Population: 0
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+Generation 0 - Population: 2
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+Generation 0 - Population: 4
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+Generation 0 - Population: 6
+foi seis
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+novo bebezinho
+new_chromossome completed
+gametou
+pariu
+Generation 1
+starting tournament
+copy_chromossome started
+based of: 0x1864a10
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864990
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864b50
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864890
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18649d0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864a90
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864b10
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864bd0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18644b0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864430
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18643b0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864330
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18642b0
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x1864230
+new_chromossome completed
+new_chromossome returned
+copy_chromossome started
+based of: 0x18641b0
+new_chromossome completed
+new_chromossome returned
+copy_chromoss

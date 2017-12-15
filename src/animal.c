@@ -49,6 +49,9 @@ ANIMAL* new_animal() {
 }
 
 ANIMAL* copy_animal(ANIMAL* base) {
+	if (base > 0xffffffffffff) {
+		printf("Base retardada\n");
+	}
 	if (!base) return NULL;
 	ANIMAL* animal = new_empty_animal();
 	animal->chromossome = copy_chromossome(base->chromossome);

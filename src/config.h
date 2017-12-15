@@ -2,28 +2,28 @@
 #define CONFIG_H
 
 // Environment
-#define FOOD 0
-#define TEMPERATURE 0
-#define WATERNESS 0
-#define PREDATION 0
+#define FOOD 0.5
+#define TEMPERATURE 0.5
+#define WATERNESS 0.5
+#define PREDATION 0.5
 // Chromossome
-#define SPEED_PREDATION 0
-#define SPEED_SPEED 0
-#define METABOLISM_SPEED 0
-#define METABOLISM_TEMP 0
-#define COLD_RESISTANCE_FOOD 0
-#define COLD_RESISTANCE_WATERNESS 0
-#define COLD_RESISTANCE_TEMP 0
-#define POWER 0
-#define REST_TIME_FOOD 0
-#define REST_TIME_PREDATION 0
-#define REST_TIME_TEMP 0
-#define THIRST_SPEED 0
-#define THIRST_WATERNESS 0
-#define THIRST_TEMP 0
+#define SPEED_PREDATION 0.5
+#define SPEED_SPEED 0.5
+#define METABOLISM_SPEED 0.5
+#define METABOLISM_TEMP 0.5
+#define COLD_RESISTANCE_FOOD 0.5
+#define COLD_RESISTANCE_WATERNESS 0.5
+#define COLD_RESISTANCE_TEMP 0.5
+#define POWER 0.5
+#define REST_TIME_FOOD 0.5
+#define REST_TIME_PREDATION 0.5
+#define REST_TIME_TEMP 0.5
+#define THIRST_SPEED 0.5
+#define THIRST_WATERNESS 0.5
+#define THIRST_TEMP 0.5
 // Battle
-#define FITNESS 0
-#define POWER 0
+#define FITNESS 0.5
+#define POWER 0.5
 
 struct coeficients {
 	// Environment
