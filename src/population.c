@@ -51,32 +51,29 @@ POPULATION* choose_contestants(POPULATION* population, int population_size) {
 POPULATION* copy_population(POPULATION* population, int population_size) {
 	POPULATION* copy = malloc(sizeof(POPULATION) * population_size);
 	for (int i = 0; i < population_size; i++){
-		if (get_chromossome(population[i]) > 0xffffffffffff) {
-			printf("retardou\n");
-		}
 		copy[i] = copy_animal(population[i]);
 	}
 	return copy;
 }
 
-void export_population(POPULATION* population, int population_size, int index, FILE* file) {
+void export_population(POPULATION* population, int population_size, ENVIRONMENT* env, int index, FILE* file) {
 	/*
 	 * index, chromo[i]->speed, metabolism, cold_resistance, power, rest_time, thirst
 	 */
-	fprintf(file, "%d", index);
 	for (int i = 0; i < population_size; i++){
 		CHROMOSSOME* i_chromo = get_chromossome(population[i]);
-		fprintf(file, ",%f,%f,%f,%f,%f,%f,%d",
+		fprintf(file, "%d,%d,%f,%f,%f,%f,%f,%f,%f\n",
+                get_evolutionary_pressure(population[i]),
+                index,
 				chromo_get_speed(i_chromo),
 				chromo_get_metabolism(i_chromo),
 				chromo_get_cold_resistance(i_chromo),
 				chromo_get_power(i_chromo),
 				chromo_get_rest_time(i_chromo),
 				chromo_get_thirst(i_chromo),
-				get_evolutionary_pressure(population[i])
+                get_fitness(population[i], env)
 			   );
 	}
-	fprintf(file, "\n");
 }
 
 void free_population(POPULATION* population, int population_size) {

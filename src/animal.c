@@ -11,9 +11,6 @@ struct animal {
 ANIMAL* new_empty_animal() {
 	ANIMAL* animal = malloc(sizeof(ANIMAL));
 	animal->evolutionary_pressure = 0;
-	if (animal < 0x10000) {
-		printf("NEW_EMPTY_ANIMAL FAILED!!");
-	}
 	return animal;
 }
 
@@ -31,14 +28,13 @@ int get_evolutionary_pressure(ANIMAL* animal) {
  */
 ANIMAL* intercourse(ANIMAL* one, ANIMAL* two, float mutation_factor, float mutation_probability) {
 	ANIMAL* baby = new_empty_animal();
-	printf("novo bebezinho\n");
+    baby->evolutionary_pressure = one->evolutionary_pressure;
 	baby->chromossome = gametosex(
 			one->chromossome,
 			two->chromossome,
 			mutation_factor,
 			mutation_probability
 			);
-	printf("pariu\n");
 	return baby;
 }
 
@@ -49,12 +45,10 @@ ANIMAL* new_animal() {
 }
 
 ANIMAL* copy_animal(ANIMAL* base) {
-	if (base > 0xffffffffffff) {
-		printf("Base retardada\n");
-	}
 	if (!base) return NULL;
 	ANIMAL* animal = new_empty_animal();
 	animal->chromossome = copy_chromossome(base->chromossome);
+	animal->evolutionary_pressure = base->evolutionary_pressure;
 	return animal;
 }
 
@@ -119,9 +113,6 @@ void free_animal(ANIMAL** animal){
  *     thr = thirst
  */
 float get_fitness(ANIMAL* animal, ENVIRONMENT* env) {
-	if (animal < 0x10000) {
-		printf("Deu ruim: animal %p\n", animal);
-	}
 	struct coeficients config = get_coeficients();
 
 	float rest = get_rest_time(animal);

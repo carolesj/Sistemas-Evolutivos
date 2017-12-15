@@ -33,10 +33,6 @@ CHROMOSSOME* new_chromossome(
 		) {
 	CHROMOSSOME* ret = malloc(sizeof(CHROMOSSOME));
 
-	if (ret < 0x10000) {
-		printf("NEW_CHROMOSSOME_FAILED!\n");
-	}
-
 	ret->speed = speed;
 	ret->metabolism = metabolism;
 	ret->cold_resistance = cold_resistance;
@@ -44,32 +40,19 @@ CHROMOSSOME* new_chromossome(
 	ret->rest_time = rest_time;
 	ret->thirst = thirst;
 
-	printf("new_chromossome completed\n");
-
 	return ret;
 }
 
 CHROMOSSOME* copy_chromossome(CHROMOSSOME* base) {
 	if (!base) return NULL;
-	printf("copy_chromossome started\n");
-	printf("based of: %p\n", base);
-	printf("%f, %f, %f, %f, %f, %f\n", 
-			base->speed,
-			base->metabolism,
-			base->cold_resistance,
-			base->power,
-			base->rest_time,
-			base->thirst);
-	CHROMOSSOME* c = new_chromossome(
+	return new_chromossome(
 			base->speed,
 			base->metabolism,
 			base->cold_resistance,
 			base->power,
 			base->rest_time,
 			base->thirst
-			);
-	printf("new_chromossome returned\n");
-	return c;
+	);
 }
 
 float _gametosex_part(
@@ -77,13 +60,11 @@ float _gametosex_part(
 		float mutation_factor,
 		float mutation_probability
 		) {
-	// printf("parte do secho de gametas\n");
 	float value = (a + b)/2;
 	if (random_f() < mutation_probability) {
 		int sign = random_between(0, 1) ? 1 : -1;
 		value += mutation_factor * sign;
 	}
-	// printf("deu bom gametosex_patzn\n");
 	return value;
 }
 
@@ -116,7 +97,6 @@ CHROMOSSOME* gametosex(
 			rest_time,
 			thirst
 			);
-	printf("gametou\n");
 	return c;
 }
 

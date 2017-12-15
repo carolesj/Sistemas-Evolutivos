@@ -18,6 +18,6 @@ POPULATION* copy_population(POPULATION* population, int population_size);
 
 void free_population(POPULATION* population, int population_size);
 
-void export_population(POPULATION* population, int population_size, int index, FILE* file);
+void export_population(POPULATION* population, int population_size, ENVIRONMENT* env, int index, FILE* file);
 
 #endif /* POPULATION_T */
