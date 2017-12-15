@@ -12,6 +12,13 @@
 
 #define DEFAULT_EXPORT_NAME "nature's_beautiful.dat"
 
+/*
+ * Authors:
+ * Caroline Jesuíno Nunes da Silva - 9293925
+ * Lucas Antognoni de Castro - 8936951
+ * Roberto Pommella Alegro - 8936756
+ */
+
 enum epochs {
 	EPOCH_1,
 	EPOCH_2a,

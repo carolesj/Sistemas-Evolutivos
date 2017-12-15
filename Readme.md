@@ -1,3 +1,9 @@
+Autores
+=======
+- Caroline Jesuíno Nunes da Silva - 9293925
+- Lucas Antognoni de Castro - 8936951
+- Roberto Pommella Alegro - 8936756
+
 Genoma
 ======
 Todos os valores no cromossomo são reais [0,1]
