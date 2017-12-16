@@ -4,6 +4,45 @@ Autores
 - Lucas Antognoni de Castro - 8936951
 - Roberto Pommella Alegro - 8936756
 
+Execução
+========
+
+Compilação
+----------
+Para compilar um executável do programa, basta seguir as etapas abaixo
+
+```
+mkdir cmake && cd cmake
+cmake ..
+make
+cd ..
+cp cmake/bin/AG .
+```
+
+Para executar o programa, basta executar
+
+```
+./AG <FILENAME>
+```
+
+Onde `<FILENAME>` é o nome do arquivo onde serão gravados os resultados.
+
+Visualização
+------------
+
+Para visualizar os dados gerados pelo programa, basta usar o script em `Python` como descrito abaixo
+
+```
+python3 plot/script.py <FILENAME>
+```
+
+Onde `<FILENAME>` é o nome do arquivo gerado pela execução do programa.
+
+Para visualizar os dados é necessário ter instalado `Python >= 3` e as bibliotecas abaixo:
+
+- pandas
+- matplotlib
+
 Genoma
 ======
 Todos os valores no cromossomo são reais [0,1]
