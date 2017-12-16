@@ -69,4 +69,5 @@ Fitness =
 	Predação * ( [v]v - [t]t ) +
 	[v]v * ( [m]m + [s]s ) +
 	Acquamentação * ( - [s]s - [r]r)
+	Temperatura * ( [s]s - [m]m + [t]t + [r]r )
 ```

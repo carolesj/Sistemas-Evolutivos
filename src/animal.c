@@ -104,6 +104,7 @@ void free_animal(ANIMAL** animal){
  *     predation * ( [spd]spd - [rest]rest ) +
  *     [spd]spd * ( [met]met + [thr]thr ) +
  *     waterness * ( - [thr]thr - [cr]cr)
+ *     temperature * ( [thr]thr - [met]met + [rest]rest + [cr]cr )
  *
  *     [X] = coeficient of X
  *     rest = rest time
